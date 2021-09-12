@@ -1,6 +1,5 @@
 <?php
 header('Content-Type:image/svg+xml'); 
-header('Content-Encoding:gzip'); 
 define('access', 'get');
 include_once("Class/Mysql.class.php");
 include_once("Class/Tools.class.php");
@@ -67,5 +66,4 @@ foreach ($chars as $val)
     $x += $width;
 }
 $outSvg .= '</g></svg>';
-$outSvg = gzencode($outSvg, 9);
 echo $outSvg;
