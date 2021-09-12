@@ -10,6 +10,10 @@
 - 修改文件 ```Class/Config.class.php``` 内的站点链接
 
 ## Nginx伪静态:
-location / { rewrite ^/get/@(.*)$ /get.php?name=$1 last; }  
+```
+location / { 
+  rewrite ^/get/@(.*)$ /get.php?name=$1 last; 
+}
+```
 
 Apache伪静态暂无，自行研究谢谢
