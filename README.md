@@ -18,3 +18,11 @@ location / {
 ```
 
 Apache伪静态暂无，自行研究谢谢
+
+## Credits
+
+*   [repl.it](https://repl.it/)
+*   [moebooru](https://github.com/moebooru/moebooru)
+*   rule34.xxx NSFW
+*   gelbooru.com NSFW
+*   [Icons8](https://icons8.com/icons/set/star)
