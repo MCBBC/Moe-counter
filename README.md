@@ -6,6 +6,7 @@
 本项目是基于 [https://github.com/journey-ad/Moe-counter](Github@journey-ad/Moe-counter) 制作的PHP + Mysql版本
 
 ## 使用说明：
+- 创建数据库并导入sql文件
 - 修改文件 ```Class/Mysql.class.php``` 内的数据库连接信息
 - 修改文件 ```Class/Config.class.php``` 内的站点链接
 
