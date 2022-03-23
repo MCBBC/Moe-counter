@@ -3,7 +3,7 @@
 
 ![Moe-counter](https://moecount.awa.tips/get/@Moe-counters.github)
 
-本项目是基于 [https://github.com/journey-ad/Moe-counter](Github@journey-ad/Moe-counter) 制作的PHP + Mysql版本
+本项目是基于 [https://github.com/journey-ad/Moe-counter](https://github.com/journey-ad/Moe-counter) 制作的PHP + Mysql版本
 
 ## 使用说明：
 - 创建数据库并导入sql文件
