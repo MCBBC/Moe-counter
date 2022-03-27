@@ -44,7 +44,6 @@
                 border-bottom: 1px solid #03a9f4;
             }
         </style>
-        <script data-host="https://analytics.awa.tips" data-dnt="false" src="https://analytics.awa.tips/js/script.js" id="ZwSg9rf6GA" async defer></script>
     </head>
     <body>
         <h3><?php echo $_LANG['info.1']; ?></h3>
