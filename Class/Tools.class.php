@@ -2,33 +2,30 @@
 if (!defined('access') or !access) {
     die('This file cannot be directly accessed.');
 }
-function getData($name, $type, $referer = null)
+function getData($name, $type)
 {
+    $Db = new dbManager;
+    $name_md5 = md5($name);
     switch ($type) 
     {
         case 'select':
-            $selectNameSql = "SELECT * FROM `counter` WHERE `name` = md5('$name')";
-            $data = mysqli_fetch_array(connect('counter', $selectNameSql));
+            $select_name_sql = "SELECT * FROM `counter` WHERE `name` = '$name_md5'";
+            $data = $Db->query($select_name_sql);
             break;
             
         case 'insert':
-            $insertNameSql = "INSERT INTO `counter` (`name`, `def_name`, `time`) VALUES (md5('$name'), '$name', now())";
-            $data = connect('counter', $insertNameSql);
+            $insert_name_sql = "INSERT INTO `counter` (`name`, `counter`, `def_name`) VALUES ('$name_md5', '1', '$name')";
+            $data = $Db->exec($insert_name_sql);
             break;
             
         case 'update':
-            $updateNameSql = "UPDATE `counter` SET `counter` = counter + 1 WHERE `name` = md5('$name')";
-            $data = connect('counter', $updateNameSql);
-            break;
-            
-        case 'referer':
-            $updateNameSql = "UPDATE `counter` SET `from` = '$referer' WHERE `name` = md5('$name')";
-            $data = connect('counter', $updateNameSql);
+            $update_name_sql = "UPDATE `counter` SET `counter` = counter + 1 WHERE `name` = '$name_md5'";
+            $data = $Db->exec($update_name_sql);
             break;
 
         default:
-            $selectNameSql = "SELECT * FROM `counter` WHERE `name` = md5('$name')";
-            $data = mysqli_fetch_array(connect('counter', $selectNameSql));
+            $select_name_sql = "SELECT * FROM `counter` WHERE `name` = '$name_md5'";
+            $data = $Db->query($select_name_sql);
             break;
     }
     return $data;
