@@ -1,11 +1,13 @@
-<?php
-header('Content-Type:image/svg+xml'); 
+<?php 
 define('access', 'get');
-include_once("Class/Mysql.class.php");
+header('Content-Type:image/svg+xml; charset=utf-8'); 
+header('Cache-Control: no-cache, no-store, max-age=0, must-revalidate');
+header('Content-Encoding:gzip');
+include_once("Class/Sqlite.class.php");
 include_once("Class/Tools.class.php");
 
-$name = $_GET['name'] ? $_GET['name'] : 'demo';
-$theme = $_GET['theme'] ? $_GET['theme'] : 'rule34';
+$name = addslashes(strip_tags(trim($_GET['name'] ? $_GET['name'] : 'demo')));
+$theme = addslashes(strip_tags(trim($_GET['theme'] ? $_GET['theme'] : 'rule34')));
 $x = 0;
 
 switch ($theme) 
@@ -33,12 +35,16 @@ switch ($name)
         $PLACES = 10;
     break;
     
+    case ':name:':
+        die('请勿使用 :name: 作为名称');
+    break;
+    
     default:
         if(getData($name, 'select'))
         {
             getData($name, 'update');
             $data = getData($name, 'select');
-            $mun = $data['counter'];
+            $mun = $data['2'];
         }
         else
         {
@@ -49,12 +55,6 @@ switch ($name)
     break;
 }
 
-        
-$referer = $_SERVER["HTTP_REFERER"];
-if(!empty($referer))
-{
-    getData($name, 'referer', urlencode($referer));
-}
 $str = sprintf("%07d", $mun); //里面的07是一共显示几个数
 $chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
 $allWidth = $width * $PLACES;
@@ -66,4 +66,5 @@ foreach ($chars as $val)
     $x += $width;
 }
 $outSvg .= '</g></svg>';
+$outSvg = gzencode($outSvg, 9);
 echo $outSvg;
