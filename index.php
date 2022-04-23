@@ -50,9 +50,10 @@
         <p><?php echo $_LANG['info.2']; ?></p>
         <p style="text-decoration: line-through"><?php echo $_LANG['info.3']; ?></p>
         <p><?php echo $_LANG['info.4']; ?></p>
+        <p><?php echo $_LANG['info.12']; ?> <a href="https://github.com/MCBBC/Moe-counter" target="_blank"><code class="text-decoration">Github@MCBBC/Moe-counter</code></a></p>
         <h3><?php echo $_LANG['info.5']; ?></h3>
         <h5><?php echo $_LANG['info.6']; ?></h5><code><?php echo config['web']['url'] ?>/get/@:name</code>
-        <h5><?php echo $_LANG['info.7']; ?></h5><code><img src="<?php echo config['web']['url'] ?>/get/@:name" alt=":name" /></code>
+        <h5><?php echo $_LANG['info.7']; ?></h5><code>&lt;img src="<?php echo config['web']['url'] ?>/get/@:name" alt=":name" /></code>
         <h5><?php echo $_LANG['info.8']; ?></h5><code>![:name](<?php echo config['web']['url'] ?>/get/@:name)</code>
         <h3>eg:<img src="<?php echo config['web']['url'] ?>/get/@index" alt="Moe Count!" /></h3>
         <i><?php echo $_LANG['info.9']; ?></i>
@@ -61,15 +62,17 @@
                 <h3 style="display: inline-block; cursor: pointer;" class="text-decoration"><?php echo $_LANG['info.10']; ?></h3>
             </summary>
             <p style="margin: 0;"><?php echo $_LANG['info.11']; ?></p>
-            <h5>moebooru</h5>
-            <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=moebooru" alt="Moebooru" />
-            <h5>moebooru-h</h5>
-            <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=moebooru-h" alt="Moebooru-Hentai" />
-            <h5>rule34</h5>
+            <h5><a href="https://www.asoulworld.com/" target="_blank">asoul</a></h5>
+            <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=asoul" alt="A-SOUL" />
+            <h5><a href="https://rule34.xxx/" target="_blank">rule34 <span style="color: red;">[NSFW]</span></a></h5>
             <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=rule34" alt="Rule34" />
-            <h5>gelbooru</h5>
+            <h5><a href="https://github.com/moebooru/moebooru" target="_blank">moebooru</a></h5>
+            <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=moebooru" alt="Moebooru" />
+            <h5><a href="https://github.com/moebooru/moebooru" target="_blank">moebooru-h</a></h5>
+            <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=moebooru-h" alt="Moebooru-Hentai" />
+            <h5><a href="https://gelbooru.com/" target="_blank">gelbooru <span style="color: red;">[NSFW]</span></a></h5>
             <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=gelbooru" alt="Gelbooru" />
-            <h5>gelbooru-h</h5>
+            <h5><a href="https://gelbooru.com/" target="_blank">gelbooru-h <span style="color: red;">[NSFW]</span></a></h5>
             <img src="<?php echo config['web']['url'] ?>/get/@demo?theme=gelbooru-h" alt="Gelbooru-Hentai" />
         </details>
         <details>
