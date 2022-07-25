@@ -1,7 +1,7 @@
 # Moe-counter
 一个PHP+Sqlite版本的计数器
 
-![Moe-counter](https://moecount.htloli.com/get/@Moe-counters-Sqlite.github)
+![Moe-counter](https://moecount.htloli.com/get/@Moe-counters.github)
 
 本项目是基于 [https://github.com/journey-ad/Moe-counter](https://github.com/journey-ad/Moe-counter) 制作的PHP + Mysql版本
 
