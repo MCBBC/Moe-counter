@@ -1,15 +1,11 @@
 # Moe-counter
-一个PHP+Mysql版本的计数器
-
-# 分支有Sqlite版本
+一个PHP+Sqlite版本的计数器
 
 ![Moe-counter](https://moecount.htloli.com/get/@Moe-counters.github)
 
 本项目是基于 [https://github.com/journey-ad/Moe-counter](https://github.com/journey-ad/Moe-counter) 制作的PHP + Mysql版本
 
 ## 使用说明：
-- 创建数据库并导入sql文件
-- 修改文件 ```Class/Mysql.class.php``` 内的数据库连接信息
 - 修改文件 ```Class/Config.class.php``` 内的站点链接
 
 ## Nginx伪静态:
