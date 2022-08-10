@@ -1,7 +1,10 @@
 <?php
+// 禁止直接访问本文件
 if (!defined('access') or !access) {
     die('This file cannot be directly accessed.');
 }
+
+// 获取数据
 function getData($name, $type, $referer = null)
 {
     switch ($type) 
@@ -34,6 +37,7 @@ function getData($name, $type, $referer = null)
     return $data;
 }
 
+// 文件转Base64
 function fileToBase64($file)
 {
     $base64_file = '';
