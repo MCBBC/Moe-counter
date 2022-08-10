@@ -8,6 +8,7 @@ $name = $_GET['name'] ? $_GET['name'] : 'demo';
 $theme = $_GET['theme'] ? $_GET['theme'] : 'rule34';
 $x = 0;
 
+// 设定某些主题图片大小
 switch ($theme) 
 {
     case 'gelbooru':
@@ -26,6 +27,7 @@ switch ($theme)
     break;
 }
 
+// 设定demo演示数据
 switch ($name) 
 {
     case 'demo':
@@ -49,12 +51,6 @@ switch ($name)
     break;
 }
 
-        
-$referer = $_SERVER["HTTP_REFERER"];
-if(!empty($referer))
-{
-    getData($name, 'referer', urlencode($referer));
-}
 $str = sprintf("%07d", $mun); //里面的07是一共显示几个数
 $chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
 $allWidth = $width * $PLACES;
