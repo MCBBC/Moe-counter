@@ -6,8 +6,9 @@ header('Content-Encoding:gzip');
 include_once("Class/Sqlite.class.php");
 include_once("Class/Tools.class.php");
 
-$name = addslashes(strip_tags(trim($_GET['name'] ? $_GET['name'] : 'demo')));
-$theme = addslashes(strip_tags(trim($_GET['theme'] ? $_GET['theme'] : 'rule34')));
+$name = addslashes(strip_tags(trim($_GET['name'] ? $_GET['name'] : 'demo'))); // 名称
+$theme = addslashes(strip_tags(trim($_GET['theme'] ? $_GET['theme'] : 'rule34'))); // 主题
+$show = addslashes(strip_tags(trim($_GET['show'] ? $_GET['show'] : '10'))); // 显示数字位数，默认10位
 $x = 0;
 
 switch ($theme) 
@@ -32,11 +33,7 @@ switch ($name)
 {
     case 'demo':
         $mun = '1234567890';
-        $PLACES = 10;
-    break;
-    
-    case ':name:':
-        die('请勿使用 :name: 作为名称');
+        $long = 10;
     break;
     
     default:
@@ -51,13 +48,25 @@ switch ($name)
             getData($name, 'insert');
             $mun = '1';
         }
-        $PLACES = 7;
     break;
 }
 
-$str = sprintf("%07d", $mun); //里面的07是一共显示几个数
+if($show < strlen($mun))
+{
+    $long = strlen($mun) + 2;
+} 
+elseif($show > 20) 
+{
+    $long = strlen($mun) + 2;
+} 
+else
+{
+    $long = $show;
+}
+
+$str = sprintf("%0".$long."d", $mun); //里面的07是一共显示几个数
 $chars = preg_split('//', $str, -1, PREG_SPLIT_NO_EMPTY);
-$allWidth = $width * $PLACES;
+$allWidth = $width * $long;
 $outSvg = '<?xml version="1.0" encoding="UTF-8"?><svg width="'.$allWidth.'" height="'.$height.'" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>Moe Count</title><g>';
 foreach ($chars as $val)
 {
