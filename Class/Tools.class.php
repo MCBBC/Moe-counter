@@ -23,11 +23,6 @@ function getData($name, $type, $referer = null)
             $updateNameSql = "UPDATE `counter` SET `counter` = counter + 1 WHERE `name` = md5('$name')";
             $data = connect('counter', $updateNameSql);
             break;
-            
-        case 'referer':
-            $updateNameSql = "UPDATE `counter` SET `from` = '$referer' WHERE `name` = md5('$name')";
-            $data = connect('counter', $updateNameSql);
-            break;
 
         default:
             $selectNameSql = "SELECT * FROM `counter` WHERE `name` = md5('$name')";
