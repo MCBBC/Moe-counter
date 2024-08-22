@@ -3,7 +3,7 @@
 
 # 分支有Sqlite版本
 
-![Moe-counter](https://moecount.htloli.com/get/@Moe-counters.github)
+![Moe-counter](https://api.htloli.com/api/v1/moecount?authorization=qbRDesfKYzDUDWmy4XAWF6FRuz2jqRNG&name=Moe-counters.github)
 
 本项目是基于 [https://github.com/journey-ad/Moe-counter](https://github.com/journey-ad/Moe-counter) 制作的PHP + Mysql版本
 
